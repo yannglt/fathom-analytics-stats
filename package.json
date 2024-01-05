@@ -5,16 +5,19 @@
   "description": "Get all your websites analytics from Fathom",
   "icon": "command-icon.png",
   "author": "yannglt",
-  "categories": ["Developer Tools", "Data"],
+  "categories": [
+    "Developer Tools",
+    "Data"
+  ],
   "license": "MIT",
   "commands": [
-    // {
-    //   "name": "browse-pageviews",
-    //   "title": "Browse Pageviews",
-    //   "subtitle": "Fathom Analytics Stats",
-    //   "description": "Display your website pages, ranked by pageviews.",
-    //   "mode": "view"
-    // },
+    {
+      "name": "browse-pageviews",
+      "title": "Browse Pageviews",
+      "subtitle": "Fathom Analytics Stats",
+      "description": "Display your website pages, ranked by pageviews.",
+      "mode": "view"
+    },
     // {
     //   "name": "browse-referrers",
     //   "title": "Browse Referrers",
