@@ -18,13 +18,13 @@
       "description": "Display your website pages, ranked by pageviews.",
       "mode": "view"
     },
-    // {
-    //   "name": "browse-referrers",
-    //   "title": "Browse Referrers",
-    //   "subtitle": "Fathom Analytics Stats",
-    //   "description": "Display your referrers, ranked by pageviews.",
-    //   "mode": "view"
-    // },
+    {
+      "name": "browse-referrers",
+      "title": "Browse Referrers",
+      "subtitle": "Fathom Analytics Stats",
+      "description": "Display your referrers, ranked by pageviews.",
+      "mode": "view"
+    },
     // {
     //   "name": "browse-devices",
     //   "title": "Browse Devices",
