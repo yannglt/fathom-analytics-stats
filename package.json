@@ -32,13 +32,13 @@
     //   "description": "Display your visitors' devices, ranked by visits.",
     //   "mode": "view"
     // },
-    // {
-    //   "name": "browse-browsers",
-    //   "title": "Browse Browsers",
-    //   "subtitle": "Fathom Analytics Stats",
-    //   "description": "Display your visitors' browsers, ranked by visits.",
-    //   "mode": "view"
-    // },
+    {
+      "name": "browse-browsers",
+      "title": "Browse Browsers",
+      "subtitle": "Fathom Analytics Stats",
+      "description": "Display your visitors' browsers, ranked by visits.",
+      "mode": "view"
+    },
     // {
     //   "name": "browse-countries",
     //   "title": "Browse Countries",
