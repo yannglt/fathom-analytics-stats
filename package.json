@@ -25,13 +25,13 @@
       "description": "Display your referrers, ranked by pageviews.",
       "mode": "view"
     },
-    // {
-    //   "name": "browse-devices",
-    //   "title": "Browse Devices",
-    //   "subtitle": "Fathom Analytics Stats",
-    //   "description": "Display your visitors' devices, ranked by visits.",
-    //   "mode": "view"
-    // },
+    {
+      "name": "browse-devices",
+      "title": "Browse Devices",
+      "subtitle": "Fathom Analytics Stats",
+      "description": "Display your visitors' devices, ranked by visits.",
+      "mode": "view"
+    },
     {
       "name": "browse-browsers",
       "title": "Browse Browsers",
