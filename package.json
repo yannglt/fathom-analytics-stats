@@ -39,13 +39,13 @@
       "description": "Display your visitors' browsers, ranked by visits.",
       "mode": "view"
     },
-    // {
-    //   "name": "browse-countries",
-    //   "title": "Browse Countries",
-    //   "subtitle": "Fathom Analytics Stats",
-    //   "description": "Display your visitors' countries, ranked by visits.",
-    //   "mode": "view"
-    // },
+    {
+      "name": "browse-countries",
+      "title": "Browse Countries",
+      "subtitle": "Fathom Analytics Stats",
+      "description": "Display your visitors' countries, ranked by visits.",
+      "mode": "view"
+    },
     {
       "name": "menu-bar",
       "title": "Menu Bar",
