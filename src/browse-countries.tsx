@@ -272,7 +272,7 @@ function PeriodDropdown(props: { timePeriods: TimePeriod[]; onTimePeriodChange: 
   const { timePeriods, onTimePeriodChange } = props;
   return (
     <List.Dropdown
-      tooltip="Select a time period"
+      tooltip="Choose a time period"
       storeValue={true}
       onChange={(newValue) => {
         onTimePeriodChange(newValue);
