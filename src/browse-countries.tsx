@@ -344,7 +344,7 @@ export default function Command() {
   function getCurrentYearStartDate() {
     const currentDate = new Date();
     const currentYearStartDate = new Date(currentDate.getFullYear(), 0, 1);
-    return formatDate(currentYearStartDate);
+    return currentYearStartDate.getFullYear().toString();
   }
 
   function getPreviousYearStartDate() {
