@@ -275,7 +275,9 @@ function PeriodDropdown(props: { timePeriods: TimePeriod[]; onTimePeriodChange: 
       tooltip="Choose a time period"
       storeValue={true}
       onChange={(newValue) => {
-        onTimePeriodChange(newValue);
+        if (newValue !== "") {
+          onTimePeriodChange(newValue);
+        }
       }}
     >
       {timePeriods.map((timePeriod) => (
