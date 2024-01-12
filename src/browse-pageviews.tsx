@@ -1,6 +1,7 @@
 import { getPreferenceValues, List, Icon } from "@raycast/api";
 import { useFetch } from "@raycast/utils";
 import { useState } from "react";
+import PeriodDropdown from "./components/PeriodDropdown";
 
 interface Preferences {
   apiToken: string;
@@ -13,27 +14,6 @@ type Page = {
 };
 
 type Data = Page[];
-
-type TimePeriod = { id: string; title: string; value: string };
-
-function PeriodDropdown(props: { timePeriods: TimePeriod[]; onTimePeriodChange: (newValue: string) => void }) {
-  const { timePeriods, onTimePeriodChange } = props;
-  return (
-    <List.Dropdown
-      tooltip="Choose a time period"
-      storeValue={true}
-      onChange={(newValue) => {
-        if (newValue !== "") {
-          onTimePeriodChange(newValue);
-        }
-      }}
-    >
-      {timePeriods.map((timePeriod) => (
-        <List.Dropdown.Item key={timePeriod.id} title={timePeriod.title} value={timePeriod.value} />
-      ))}
-    </List.Dropdown>
-  );
-}
 
 export default function Command() {
   const preferences = getPreferenceValues<Preferences>();
@@ -53,7 +33,7 @@ export default function Command() {
     },
   );
 
-  const timePeriods: TimePeriod[] = [
+  const timePeriods = [
     { id: "1", title: "Today", value: getCurrentDate() },
     { id: "2", title: "Yesterday", value: getPreviousDate(1) },
     { id: "3", title: "Last 7 Days", value: getPreviousDate(7) },
@@ -108,7 +88,7 @@ export default function Command() {
     return `${year}-${month}-${day}`;
   }
 
-  const onTimePeriodChange = (newValue: string) => {
+  const handleTimePeriodChange = (newValue: string) => {
     setDateFrom(newValue);
   };
 
@@ -117,7 +97,7 @@ export default function Command() {
       isLoading={isLoading}
       navigationTitle="Change time period"
       searchBarPlaceholder="Search your pages"
-      searchBarAccessory={<PeriodDropdown timePeriods={timePeriods} onTimePeriodChange={onTimePeriodChange} />}
+      searchBarAccessory={<PeriodDropdown timePeriods={timePeriods} onTimePeriodChange={handleTimePeriodChange} />}
     >
       {data?.map((page) => (
         <List.Item
