@@ -248,4 +248,4 @@ export const countryMapping: { [code: string]: string } = {
     ZA: "South Africa",
     ZM: "Zambia",
     ZW: "Zimbabwe",
-  };
+};

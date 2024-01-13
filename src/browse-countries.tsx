@@ -30,10 +30,8 @@ export default function Command() {
   const [dateFrom, setDateFrom] = useState<string>("");
 
   const { data, isLoading } = useFetch<Data>(
-    `https://api.usefathom.com/v1/aggregations?entity_id=${
-      preferences.siteId
-    }&entity=pageview&aggregates=pageviews&field_grouping=country_code&sort_by=pageviews:desc${
-      dateFrom ? `&date_from=${dateFrom}` : ""
+    `https://api.usefathom.com/v1/aggregations?entity_id=${preferences.siteId
+    }&entity=pageview&aggregates=pageviews&field_grouping=country_code&sort_by=pageviews:desc${dateFrom ? `&date_from=${dateFrom}` : ""
     }`,
     {
       method: "GET",
@@ -43,6 +41,8 @@ export default function Command() {
     },
   );
 
+  const totalPageviews = data?.reduce((total, page) => total + parseInt(page.pageviews), 0) || 0;
+
   return (
     <List
       isLoading={isLoading}
@@ -50,13 +50,16 @@ export default function Command() {
       searchBarPlaceholder="Search devices"
       searchBarAccessory={<PeriodDropdown setDateFrom={setDateFrom} />}
     >
-      {data?.map((referrer) => (
-        <List.Item 
-          key={referrer.country_code} 
-          title={`${countryCodeToFlagEmoji(referrer.country_code)} ${countryMapping[referrer.country_code] || referrer.country_code}`} 
-          accessories={[{ text: referrer.pageviews.toLocaleString() }, { icon: Icon.TwoPeople }]}
-        />
-      ))}
+      {data?.map((country) => {
+        const relativePageviews = ((parseInt(country.pageviews) / totalPageviews) * 100).toFixed(1);
+        return (
+          <List.Item
+            key={country.country_code}
+            title={`${countryCodeToFlagEmoji(country.country_code)} ${countryMapping[country.country_code] || country.country_code}`}
+            accessories={[{ text: `${country.pageviews.toLocaleString()} (${relativePageviews}%)` }, { icon: Icon.TwoPeople }]}
+          />
+        );
+      })}
     </List>
   );
 }

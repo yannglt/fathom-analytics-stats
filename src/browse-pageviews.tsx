@@ -33,6 +33,8 @@ export default function Command() {
     },
   );
 
+  const totalPageviews = data?.reduce((total, page) => total + parseInt(page.pageviews), 0) || 0;
+
   return (
     <List
       isLoading={isLoading}
@@ -40,13 +42,19 @@ export default function Command() {
       searchBarPlaceholder="Search your pages"
       searchBarAccessory={<PeriodDropdown setDateFrom={setDateFrom} />}
     >
-      {data?.map((page) => (
-        <List.Item
-          key={page.pathname}
-          title={page.pathname}
-          accessories={[{ text: page.pageviews.toLocaleString() }, { icon: Icon.TwoPeople }]}
-        />
-      ))}
+      {data?.map((page) => {
+        const relativePageviews = ((parseInt(page.pageviews) / totalPageviews) * 100).toFixed(1);
+        return (
+          <List.Item
+            key={page.pathname}
+            title={page.pathname}
+            accessories={[
+              { text: `${page.pageviews.toLocaleString()} (${relativePageviews}%)` },
+              { icon: Icon.TwoPeople }
+            ]}
+          />
+        );
+      })}
     </List>
   );
 }

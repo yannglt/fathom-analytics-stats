@@ -20,10 +20,8 @@ export default function Command() {
   const [dateFrom, setDateFrom] = useState<string>("");
 
   const { data, isLoading } = useFetch<Data>(
-    `https://api.usefathom.com/v1/aggregations?entity_id=${
-      preferences.siteId
-    }&entity=pageview&aggregates=pageviews&field_grouping=device_type&sort_by=pageviews:desc${
-      dateFrom ? `&date_from=${dateFrom}` : ""
+    `https://api.usefathom.com/v1/aggregations?entity_id=${preferences.siteId
+    }&entity=pageview&aggregates=pageviews&field_grouping=device_type&sort_by=pageviews:desc${dateFrom ? `&date_from=${dateFrom}` : ""
     }`,
     {
       method: "GET",
@@ -33,6 +31,8 @@ export default function Command() {
     },
   );
 
+  const totalPageviews = data?.reduce((total, page) => total + parseInt(page.pageviews), 0) || 0;
+
   return (
     <List
       isLoading={isLoading}
@@ -40,13 +40,16 @@ export default function Command() {
       searchBarPlaceholder="Search devices"
       searchBarAccessory={<PeriodDropdown setDateFrom={setDateFrom} />}
     >
-      {data?.map((referrer) => (
-        <List.Item
-          key={referrer.device_type}
-          title={referrer.device_type}
-          accessories={[{ text: referrer.pageviews.toLocaleString() }, { icon: Icon.TwoPeople }]}
-        />
-      ))}
+      {data?.map((device) => {
+        const relativePageviews = ((parseInt(device.pageviews) / totalPageviews) * 100).toFixed(1);
+        return (
+          <List.Item
+            key={device.device_type}
+            title={device.device_type}
+            accessories={[{ text: `${device.pageviews.toLocaleString()} (${relativePageviews}%)` }, { icon: Icon.TwoPeople }]}
+          />
+        );
+      })}
     </List>
   );
 }
