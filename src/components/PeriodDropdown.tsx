@@ -16,7 +16,7 @@ const PeriodDropdown: React.FC<PeriodDropdownProps> = ({ setDateFrom: setParentD
     }
   };
 
-  const timePeriods = useMemo(() => [
+  const timePeriods: TimePeriod[] = useMemo(() => [
     { id: "1", title: "Today", value: getCurrentDate() },
     { id: "2", title: "Yesterday", value: getPreviousDate(1) },
     { id: "3", title: "Last 7 Days", value: getPreviousDate(7) },
