@@ -1,4 +1,5 @@
 import { List } from "@raycast/api";
+import { useMemo } from "react";
 
 type TimePeriod = { id: string; title: string; value: string };
 
@@ -11,7 +12,7 @@ const PeriodDropdown: React.FC<PeriodDropdownProps> = ({ setDateFrom }) => {
     setDateFrom(newValue);
   };
 
-  const timePeriods: TimePeriod[] = [
+  const timePeriods = useMemo(() => [
     { id: "1", title: "Today", value: getCurrentDate() },
     { id: "2", title: "Yesterday", value: getPreviousDate(1) },
     { id: "3", title: "Last 7 Days", value: getPreviousDate(7) },
@@ -22,7 +23,7 @@ const PeriodDropdown: React.FC<PeriodDropdownProps> = ({ setDateFrom }) => {
     { id: "8", title: "This Year", value: getCurrentYearStartDate() },
     { id: "9", title: "Last Year", value: getPreviousYearStartDate() },
     { id: "10", title: "All Time", value: "" },
-  ];
+  ], []);
 
   function getCurrentDate() {
     const currentDate = new Date();
