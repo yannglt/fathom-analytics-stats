@@ -1,5 +1,5 @@
+import { useState, useMemo } from "react";
 import { List } from "@raycast/api";
-import { useMemo } from "react";
 
 type TimePeriod = { id: string; title: string; value: string };
 
@@ -7,9 +7,13 @@ interface PeriodDropdownProps {
   setDateFrom: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const PeriodDropdown: React.FC<PeriodDropdownProps> = ({ setDateFrom }) => {
+const PeriodDropdown: React.FC<PeriodDropdownProps> = ({ setDateFrom: setParentDateFrom }) => {
+  const [dateFrom, setDateFrom] = useState<string>("");
+
   const handleTimePeriodChange = (newValue: string) => {
-    setDateFrom(newValue);
+    if (newValue !== dateFrom) {
+      setDateFrom(newValue);
+    }
   };
 
   const timePeriods = useMemo(() => [
