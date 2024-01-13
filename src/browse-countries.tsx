@@ -16,6 +16,15 @@ type Referrer = {
 
 type Data = Referrer[];
 
+function countryCodeToFlagEmoji(countryCode: string) {
+  const offset = 127397; // Unicode offset to convert ASCII to Regional Indicator Symbol
+  return countryCode
+    .toUpperCase()
+    .split('')
+    .map(char => String.fromCodePoint(char.charCodeAt(0) + offset))
+    .join('');
+}
+
 export default function Command() {
   const preferences = getPreferenceValues<Preferences>();
   const [dateFrom, setDateFrom] = useState<string>("");
@@ -42,9 +51,9 @@ export default function Command() {
       searchBarAccessory={<PeriodDropdown setDateFrom={setDateFrom} />}
     >
       {data?.map((referrer) => (
-        <List.Item
-          key={referrer.country_code}
-          title={countryMapping[referrer.country_code] || referrer.country_code}
+        <List.Item 
+          key={referrer.country_code} 
+          title={`${countryCodeToFlagEmoji(referrer.country_code)} ${countryMapping[referrer.country_code] || referrer.country_code}`} 
           accessories={[{ text: referrer.pageviews.toLocaleString() }, { icon: Icon.TwoPeople }]}
         />
       ))}
