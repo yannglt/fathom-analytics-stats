@@ -57,7 +57,7 @@ export default function Command() {
       </MenuBarExtra.Section>
       <MenuBarExtra.Section>
         <MenuBarExtra.Item
-          title="Open in Fathom Analytics"
+          title="Open in Fathom"
           icon={Icon.BarChart}
           onAction={() => open(`https://app.usefathom.com?range=today&site=${preferences.siteId}`)}
         />
