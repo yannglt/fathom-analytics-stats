@@ -13,6 +13,7 @@ const PeriodDropdown: React.FC<PeriodDropdownProps> = ({ setDateFrom: setParentD
   const handleTimePeriodChange = (newValue: string) => {
     if (newValue !== dateFrom) {
       setDateFrom(newValue);
+      setParentDateFrom(newValue);
     }
   };
 
