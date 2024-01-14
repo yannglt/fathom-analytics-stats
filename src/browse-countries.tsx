@@ -46,7 +46,7 @@ export default function Command() {
   return (
     <List
       isLoading={isLoading}
-      navigationTitle="Change time period"
+      navigationTitle="Choose a time period"
       searchBarPlaceholder="Search devices"
       searchBarAccessory={<PeriodDropdown setDateFrom={setDateFrom} />}
     >
