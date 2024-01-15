@@ -5,10 +5,7 @@
   "description": "Get all your websites analytics from Fathom",
   "icon": "command-icon.png",
   "author": "yannglt",
-  "categories": [
-    "Developer Tools",
-    "Data"
-  ],
+  "categories": ["Developer Tools", "Data"],
   "license": "MIT",
   "commands": [
     {
@@ -52,7 +49,7 @@
       "subtitle": "Fathom Analytics Stats",
       "description": "Display the number of current visitors on your website in the menu bar.",
       "mode": "menu-bar",
-      "interval": "10s"
+      "interval": "60s"
     }
   ],
   "preferences": [

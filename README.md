@@ -4,7 +4,7 @@ It includes commands to browse your: `pageviews`, `browsers`, `referrers`, `coun
 
 Each command comes with a time range option, which can be set to: `Today`, `Yesterday`, `Last 7 Days`, `Last 30 Days`, `This Month`, `Last Month`, `This Year`, `Last Year`, `All Time`.
 
-It also includes a menu bar item to display your current pageviews and referrers. The menu bar item is refreshed every 10 seconds.
+It also includes a menu bar item to display your current pageviews and referrers. The menu bar item is refreshed every minute.
 
 ## Installation
 1. Clone the repository.
