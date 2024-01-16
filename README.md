@@ -22,7 +22,7 @@ It also includes a menu bar item to display your current pageviews and referrers
 3. Select a command and press `Enter` to execute it.
 
 ## Troubleshooting
-Fathom Analytics API is rate limited to 10 requests per minute on aggregations (for the commands) and currents (for the menu bar). If you exceed this limit, you will receive a nicely designed toast error. If you receive this error, please wait a minute before trying again.
+For now, Fathom's API is rate limited to 10 requests per minute on aggregations — for the commands, and currents — for the menu bar. If you exceed this limit, you will receive a (nicely designed) toast error. If you receive this error, please wait a minute before trying again.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
