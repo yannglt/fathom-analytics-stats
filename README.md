@@ -31,6 +31,8 @@ It also includes a menu bar item to display your current pageviews and referrers
 ## Troubleshooting
 For now, Fathom's API is rate limited to 10 requests per minute on aggregations — for the commands, and currents — for the menu bar. If you exceed this limit, you will receive a (nicely designed) toast error. If you receive this error, please wait a minute before trying again.
 
+Also, the `aggregation` API endpoint is only accurate on data from March 2021. Learn more about it [here](https://usefathom.com/api#aggregation).
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
