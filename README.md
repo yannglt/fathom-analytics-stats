@@ -1,6 +1,13 @@
 # Fathom Analytics Stats
-A Raycast extension to browse your Fathom Analytics stats.
-It includes commands to browse your: `pageviews`, `browsers`, `referrers`, `countries`, `devices`.
+A Raycast extension to browse your Fathom Analytics stats. Each aggregation of page views is sorted in descending order, with a relative percentage to the total.
+| Commands           | Description
+| :---               | :---
+| `Menu Bar`         | Display your current pageviews and referrers
+| `Browse Pageviews` | Browse your pageviews
+| `Browse Referrers` | Browse your referrers
+| `Browse Browsers`  | Browse your visitor browsers
+| `Browse Countries` | Browse your visitor countries
+| `Browse Devices`   | Browse your visitor devices (desktop, tablet, mobile)
 
 Each command comes with a time range option, which can be set to: `Today`, `Yesterday`, `Last 7 Days`, `Last 30 Days`, `This Month`, `Last Month`, `This Year`, `Last Year`, `All Time`.
 
