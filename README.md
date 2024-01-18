@@ -1,17 +1,18 @@
 # Fathom Analytics Stats
 A Raycast extension to browse your Fathom Analytics stats. Each aggregation of page views is sorted in descending order, with a relative percentage to the total.
-| Commands           | Description
-| :---               | :---
-| `Menu Bar`         | Display your current pageviews and referrers
-| `Browse Pageviews` | Browse your pageviews
-| `Browse Referrers` | Browse your referrers
-| `Browse Browsers`  | Browse your visitor browsers
-| `Browse Countries` | Browse your visitor countries
-| `Browse Devices`   | Browse your visitor devices (desktop, tablet, mobile)
+
+| Commands           | Description                                            |
+| :---               | :---                                                   |
+| `Menu Bar`         | Display your current pageviews and referrers           |
+| `Browse Pageviews` | Display your most viewed pages                         |
+| `Browse Referrers` | Display your referrers                                 |
+| `Browse Browsers`  | Display your visitor browsers                          |
+| `Browse Countries` | Display your visitor countries                         |
+| `Browse Devices`   | Display your visitor devices (desktop, tablet, mobile) |
 
 Each command comes with a time range option, which can be set to: `Today`, `Yesterday`, `Last 7 Days`, `Last 30 Days`, `This Month`, `Last Month`, `This Year`, `Last Year`, `All Time`.
 
-It also includes a menu bar item to display your current pageviews and referrers. The menu bar item is refreshed every minute.
+Note that `Menu Bar` is refreshed every minute.
 
 ## Installation
 1. Clone the repository.
