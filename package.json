@@ -3,7 +3,7 @@
   "name": "fathom-analytics-stats",
   "title": "Fathom Analytics Stats",
   "description": "Get all your websites analytics from Fathom",
-  "icon": "command-icon.png",
+  "icon": "icon.png",
   "author": "yannglt",
   "categories": ["Developer Tools", "Data"],
   "license": "MIT",
