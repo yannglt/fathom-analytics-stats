@@ -5,7 +5,7 @@
   "description": "Get all your websites analytics from Fathom",
   "icon": "icon.png",
   "author": "yannglt",
-  "categories": ["Developer Tools", "Data"],
+  "categories": ["Applications", "Developer Tools", "Data"],
   "license": "MIT",
   "commands": [
     {

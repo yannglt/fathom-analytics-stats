@@ -20,9 +20,9 @@ function countryCodeToFlagEmoji(countryCode: string) {
   const offset = 127397; // Unicode offset to convert ASCII to Regional Indicator Symbol
   return countryCode
     .toUpperCase()
-    .split('')
-    .map(char => String.fromCodePoint(char.charCodeAt(0) + offset))
-    .join('');
+    .split("")
+    .map((char) => String.fromCodePoint(char.charCodeAt(0) + offset))
+    .join("");
 }
 
 export default function Command() {
@@ -30,9 +30,9 @@ export default function Command() {
   const [dateFrom, setDateFrom] = useState<string>("");
 
   const { data, isLoading } = useFetch<Data>(
-    `https://api.usefathom.com/v1/aggregations?entity_id=${preferences.siteId
-    }&entity=pageview&aggregates=pageviews&field_grouping=country_code&sort_by=pageviews:desc${dateFrom ? `&date_from=${dateFrom}` : ""
-    }`,
+    `https://api.usefathom.com/v1/aggregations?entity_id=${
+      preferences.siteId
+    }&entity=pageview&aggregates=pageviews&field_grouping=country_code&sort_by=pageviews:desc${dateFrom ? `&date_from=${dateFrom}` : ""}`,
     {
       method: "GET",
       headers: {
@@ -47,7 +47,7 @@ export default function Command() {
     <List
       isLoading={isLoading}
       navigationTitle="Choose a time period"
-      searchBarPlaceholder="Search devices"
+      searchBarPlaceholder="Search countries"
       searchBarAccessory={<PeriodDropdown setDateFrom={setDateFrom} />}
     >
       {data?.map((country) => {

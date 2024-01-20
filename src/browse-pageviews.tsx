@@ -20,9 +20,9 @@ export default function Command() {
   const [dateFrom, setDateFrom] = useState<string>("");
 
   const { data, isLoading } = useFetch<Data>(
-    `https://api.usefathom.com/v1/aggregations?entity_id=${preferences.siteId
-    }&entity=pageview&aggregates=pageviews&field_grouping=pathname&sort_by=pageviews:desc${dateFrom ? `&date_from=${dateFrom}` : ""
-    }`,
+    `https://api.usefathom.com/v1/aggregations?entity_id=${
+      preferences.siteId
+    }&entity=pageview&aggregates=pageviews&field_grouping=pathname&sort_by=pageviews:desc${dateFrom ? `&date_from=${dateFrom}` : ""}`,
     {
       method: "GET",
       headers: {
@@ -37,7 +37,7 @@ export default function Command() {
     <List
       isLoading={isLoading}
       navigationTitle="Choose a time period"
-      searchBarPlaceholder="Search your pages"
+      searchBarPlaceholder="Search pages"
       searchBarAccessory={<PeriodDropdown setDateFrom={setDateFrom} />}
     >
       {data?.map((page) => {
@@ -46,10 +46,7 @@ export default function Command() {
           <List.Item
             key={page.pathname}
             title={page.pathname}
-            accessories={[
-              { text: `${page.pageviews.toLocaleString()} (${relativePageviews}%)` },
-              { icon: Icon.TwoPeople }
-            ]}
+            accessories={[{ text: `${page.pageviews.toLocaleString()} (${relativePageviews}%)` }, { icon: Icon.TwoPeople }]}
           />
         );
       })}
