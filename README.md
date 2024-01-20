@@ -1,7 +1,7 @@
 # Fathom Analytics Stats
 A Raycast extension to browse your website analytics coming from Fathom.
 
-// TODO: Add screenshot
+![Fathom Analytics Stats extension - Commands](./metadata/fathom-analytics-stats-1.png)
 
 | Commands           | Description                                            |
 | :---               | :---                                                   |
